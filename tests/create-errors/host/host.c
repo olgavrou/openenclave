@@ -37,8 +37,9 @@ static void _test_invalid_param(const char* path, uint32_t flags)
     OE_TEST(result == OE_INVALID_PARAMETER);
 
     /* Content field filled. */
+    oe_enclave_config_t config;
     result = oe_create_create_errors_enclave(
-        path, OE_ENCLAVE_TYPE_AUTO, flags, &enclave, 0, &enclave);
+        path, OE_ENCLAVE_TYPE_SGX, flags, &config, 0, &enclave);
 
     OE_TEST(result == OE_INVALID_PARAMETER);
 

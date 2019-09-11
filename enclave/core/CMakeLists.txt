@@ -142,6 +142,7 @@ add_library(oecore STATIC
     string.c
     strtok_r.c
     strtoul.c
+    switchlesscalls.c
     tee_t_wrapper.c
     time.c
     tracee.c
