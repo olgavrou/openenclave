@@ -159,7 +159,8 @@ static void _escape_characters(
                     log_msg_escaped[idx] = '?';
                     break;
                 default:
-                    log_msg_escaped[idx] = ' ';
+                    sprintf((char*)&log_msg_escaped[idx], "u%04x", log_msg[i]);
+                    idx += 5;
                     break;
             }
         }
@@ -350,9 +351,9 @@ void oe_log_message(bool is_enclave, oe_log_level_t level, const char* message)
                     if (_log_escape)
                     {
                         size_t msg_size = strlen(log_msg);
-                        char log_msg_escaped[2 * msg_size];
+                        char log_msg_escaped[6 * msg_size];
                         _escape_characters(
-                            log_msg, log_msg_escaped, msg_size, (2 * msg_size));
+                            log_msg, log_msg_escaped, msg_size, (6 * msg_size));
 
                         _write_custom_format_message_to_stream(
                             log_file,

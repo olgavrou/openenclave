@@ -28,6 +28,7 @@ int TestLoggingFormat(const char* path)
         "\a \\a \b \\b \e \\e \f \\f \n \\n \r \\r \t \\t \v \\v \? \\?");
     OE_TRACE_ERROR("\\u005C \u0024 \u0040 @");
     OE_TRACE_ERROR("\\\\\\\\");
+    OE_TRACE_ERROR("\u2605");
     FILE* log_file = fopen(path, "r");
     char* line = NULL;
     size_t len = 0;
