@@ -25,7 +25,7 @@ User Experience
         - function log initiated from
         - file line number log initiated from
 
-        so for example a log format could be set like this:
+        so for example a log foramt could be set like this:
 
         `OE_LOG_FORMAT=$'{\"e_ts\":\"%s.%06ldZ\",\"level\":\"(%s)%s\",\"tid\":\"tid(0x%lx)\",\"msg\":\"%s\",\"file\":\"%s\",\"func\":\"%s\",\"number":\"%s\"}\n'`
 
